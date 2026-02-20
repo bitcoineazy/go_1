@@ -99,7 +99,7 @@ func fetchStats(client *http.Client, errorCount *int) bool {
 	if netBandwidth > 0 {
 		netPercent := netUsed * 100 / netBandwidth
 		if netPercent > 90 {
-			freeNet := (netBandwidth - netUsed) * 8 / (1024 * 1024)
+			freeNet := (netBandwidth - netUsed) / 1000000
 			fmt.Printf("Network bandwidth usage high: %d Mbit/s available\n", freeNet)
 		}
 	}
